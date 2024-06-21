@@ -9,5 +9,5 @@
 
 	<sec:http auto-config="true" />
 	<sec:authentication-manager alias="authenticationManager" />
-
+	
 </beans>

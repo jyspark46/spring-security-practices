@@ -19,7 +19,7 @@ public class SecurityConfig02 {
 			public void customize(WebSecurity web) {
 				web
 					.ignoring()
-					.requestMatchers(new AntPathRequestMatcher("/assets/***"));
+					.requestMatchers(new AntPathRequestMatcher("/assets/**"));
 				
 			}
 		};
@@ -27,6 +27,8 @@ public class SecurityConfig02 {
 	
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+		http.formLogin();
+		
 		return http.build();
 	}
 }

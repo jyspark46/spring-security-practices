@@ -123,6 +123,7 @@ public class SecurityConfig00 {
     public AuthenticationManager authenticationManager() {
         return new ProviderManager(authenticationProvider());
     }
+    
     @Bean
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
@@ -131,10 +132,12 @@ public class SecurityConfig00 {
 
         return authenticationProvider;
     }
+    
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(16);
     }
+    
     @Bean
     public UserDetailsService userDetailsService() {
         return new UserDetailsService(){
@@ -245,10 +248,12 @@ public class SecurityConfig00 {
     public AuthenticatedVoter authenticatedVoter() {
         return new AuthenticatedVoter();
     }
+    
     @Bean
     public RoleVoter roleVoter() {
         return new RoleVoter();
     }
+    
     @Bean
     public WebExpressionVoter webExpressionVoter() {
         WebExpressionVoter webExpressionVoter = new WebExpressionVoter();
@@ -256,6 +261,7 @@ public class SecurityConfig00 {
 
         return webExpressionVoter;
     }
+    
     @Bean
     public SecurityExpressionHandler securityExpressionHandler() {
         return new DefaultWebSecurityExpressionHandler();
